@@ -1,0 +1,14 @@
+appId: com.example.fullstackstarter
+productName: Fullstack Starter
+directories:
+  output: dist
+files:
+  - out/**
+  - package.json
+# electron-builder builds for the OS it runs on. Build mac on macOS, win on Windows, linux on Linux.
+mac:
+  target: dmg
+win:
+  target: nsis
+linux:
+  target: AppImage

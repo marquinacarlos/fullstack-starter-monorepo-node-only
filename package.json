@@ -1,0 +1,34 @@
+{
+  "name": "fullstack-starter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Full-stack monorepo template: Express API (Prisma + SQLite with raw SQL, Socket.IO), React, Electron and Next.js.",
+  "type": "module",
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint && eslint scripts eslint.config.js",
+    "test": "turbo run test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "pnpm format:check && pnpm lint && pnpm test && pnpm build",
+    "bootstrap": "node scripts/bootstrap.js",
+    "dist:desktop": "pnpm --filter @repo/desktop dist",
+    "db:migrate": "pnpm --filter @repo/api db:migrate",
+    "db:seed": "pnpm --filter @repo/api db:seed",
+    "db:studio": "pnpm --filter @repo/api db:studio"
+  },
+  "devDependencies": {
+    "@eslint/js": "catalog:",
+    "eslint": "catalog:",
+    "eslint-plugin-react": "catalog:",
+    "eslint-plugin-react-hooks": "catalog:",
+    "globals": "catalog:",
+    "prettier": "catalog:",
+    "turbo": "catalog:"
+  }
+}

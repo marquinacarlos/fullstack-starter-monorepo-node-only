@@ -1,0 +1,20 @@
+// Prisma owns the schema, the migrations and the single database connection.
+// Queries are written as raw SQL (prisma.$queryRaw / $executeRaw), not with the Prisma query API.
+// After editing this file run: pnpm db:migrate
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Item {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String?
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@map("items")
+}

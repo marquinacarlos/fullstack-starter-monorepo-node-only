@@ -1,0 +1,33 @@
+{
+  "name": "@repo/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "prisma generate",
+    "dev": "prisma migrate deploy && node --watch src/main.js",
+    "start": "prisma migrate deploy && node src/main.js",
+    "build": "node --check src/main.js",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "db:reset": "prisma migrate reset",
+    "db:seed": "node src/db/seed.js",
+    "db:studio": "prisma studio"
+  },
+  "dependencies": {
+    "@prisma/adapter-better-sqlite3": "catalog:",
+    "@prisma/client": "catalog:",
+    "cors": "catalog:",
+    "express": "catalog:",
+    "prisma": "catalog:",
+    "socket.io": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "socket.io-client": "catalog:",
+    "supertest": "catalog:",
+    "vitest": "catalog:"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://turborepo.dev/schema.json",
+  "globalEnv": ["APP_ENV", "NODE_ENV"],
+  "globalPassThroughEnv": [
+    "PORT",
+    "CORS_ORIGINS",
+    "DATABASE_PATH",
+    "VITE_API_URL",
+    "NEXT_PUBLIC_API_URL"
+  ],
+  "tasks": {
+    "dev": { "cache": false, "persistent": true },
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": ["out/**", ".next/**", "dist/**"]
+    },
+    "lint": {},
+    "test": {}
+  }
+}

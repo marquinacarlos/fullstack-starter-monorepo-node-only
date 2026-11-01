@@ -1,0 +1,14 @@
+node_modules
+.turbo
+out
+dist
+.next
+next-env.d.ts
+.DS_Store
+
+# local databases
+apps/api/data
+
+# env files with secrets
+.env.local
+.env.production
